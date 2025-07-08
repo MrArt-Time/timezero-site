@@ -1,68 +1,176 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8"/>
   <title>TimeZero — Новости</title>
   <style>
+    /* Стили из index.html */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fdf7ee;
-      color: #2d1d00;
+      background-color: #f4ecd3;
+      font-family: Verdana, sans-serif;
+      color: #3b2b1c;
       margin: 0;
+      padding: 0;
+    }
+
+    .banner {
+      background-image: url('timezero_banner_modern.jpg'); /* замените на актуальное изображение */
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      position: relative;
+    }
+
+    .banner .login-btn, .banner .register-btn {
+      position: absolute;
+      top: 60%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.25);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      color: white;
+      font-weight: bold;
+      padding: 8px 16px;
+      font-size: 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .banner .login-btn:hover,
+    .banner .register-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+    }
+
+    .banner .login-btn { left: 30%; }
+    .banner .register-btn { right: 30%; }
+
+    .sidebar {
+      width: 200px;
+      float: left;
       padding: 20px;
+      background: #fef7e7;
+      border-right: 1px solid #c5b58f;
+    }
+
+    .sidebar .sidebar-btn {
+      display: block;
+      background: #fdf3d7;
+      color: #5a3512;
+      text-decoration: none;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+      border: 1px solid #d2c3a4;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: inset 0 1px 0 #fff;
+      transition: background 0.3s ease;
+    }
+
+    .sidebar .sidebar-btn:hover {
+      background: #f8e8c1;
+      border-color: #c6b388;
+    }
+
+    .sidebar .sidebar-btn.red {
+      background: #cc0000;
+      color: white;
+      border-color: #a00000;
+      text-align: center;
+    }
+
+    .sidebar-heading {
+      font-size: 11px;
+      color: #7b5b36;
+      margin: 10px 0 4px 0;
+      padding-top: 6px;
+      border-top: 1px solid #d8caaa;
     }
 
     .container {
-      max-width: 800px;
-      margin: auto;
-      background-color: #fff7eb;
-      padding: 30px;
-      border: 1px solid #d4c6b0;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 960px;
+      margin-left: 220px;
+      background: #fefcf7;
+      padding: 20px;
     }
 
-    h1 {
-      color: #b40000;
-      font-size: 22px;
+    .news {
+      background: #fffdf7;
+      border: 1px solid #c5b58f;
+      padding: 15px;
+      margin-top: 20px;
     }
 
-    h2 {
-      margin-top: 0;
+    .news h2 {
+      color: #9b1212;
       font-size: 18px;
-      color: #2d1d00;
+      margin-bottom: 10px;
     }
 
-    ul {
-      padding-left: 20px;
+    .news p {
+      font-size: 14px;
+      line-height: 1.5;
     }
 
-    li {
-      margin-bottom: 12px;
-    }
-
-    .highlight {
+    .social-btn {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 6px;
       font-weight: bold;
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .social-btn.youtube { background-color: #FF0000; }
+    .social-btn.telegram { background-color: #0088cc; }
+    .social-btn.gold {
+      background: linear-gradient(45deg, #f5d76e, #f0c420);
+      color: #5a3512;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+      border: 1px solid #e0b000;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>05.03.2014 — Игровое обновление!</h1>
-    <h2>Всем привет и доброго времени суток, уважаемые игроки!</h2>
-
-    <p>Завтра четверг, время новостей. Но они уже устарели. Ведь период следующих двух недель будет таким... таким...</p>
-
-    <p class="highlight">Но, обо всем по порядку!</p>
-
-    <ul>
-      <li><span class="highlight">1. В ближайшие 24 часа:</span> Удаление старых вещей, исправления, новые правила, переработка квестов и уникальных предметов.</li>
-      <li><span class="highlight">2. Исправлен взрыв</span> у RPO Shmel обычной и элитной версии.</li>
-      <li><span class="highlight">3. Квест "Перебежчик":</span> Убийства по квесту теперь влияют на репутацию и дают мед. комплекты.</li>
-      <li><span class="highlight">4. Явное обозначение</span> в РЧ, РЧТ и РЧЕ, что вещи новые.</li>
-      <li><span class="highlight">5. Черные Скорпионы:</span> новые правила расчета групп и репутаций.</li>
-    </ul>
+  <div class="banner">
+    <a href="#" class="login-btn">Войти</a>
+    <a href="#" class="register-btn">Регистрация</a>
   </div>
 
+  <div class="sidebar">
+    <div class="sidebar-heading">НАВИГАЦИЯ</div>
+    <a href="#" class="sidebar-btn">Новости</a>
+    <a href="#" class="sidebar-btn">Форум</a>
+    <a href="#" class="sidebar-btn">Поддержка</a>
+    <a href="#" class="sidebar-btn red">Начать играть</a>
+
+    <div class="sidebar-heading">СОЦИАЛЬНЫЕ СЕТИ</div>
+    <a href="#" class="social-btn youtube">YouTube</a>
+    <a href="#" class="social-btn telegram">Telegram</a>
+  </div>
+
+  <div class="container">
+    <div class="news">
+      <h2>🔥 Запуск обновления 3.1</h2>
+      <p>Сегодня в 18:00 состоится запуск обновления TimeZero 3.1. Вас ждут новые локации, переработанные механики боя и улучшенная графика!</p>
+    </div>
+<div class="news">
+      <h2>🛠 Технические работы</h2>
+      <p>Сервер будет недоступен 10 июля с 02:00 до 06:00 по МСК в связи с профилактическими работами. Благодарим за понимание!</p>
+    </div>
+
+    <div class="news">
+      <h2>🏆 Турнир «Легенды пустошей»</h2>
+      <p>Регистрация на PvP-турнир уже открыта. Победителей ждут уникальные призы и слава среди игроков TimeZero!</p>
+    </div>
+  </div>
 </body>
 </html>
